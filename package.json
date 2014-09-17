@@ -5,14 +5,14 @@
   "keywords": [
     "Percent"
   ],
-  "homepage": "",
-  "author": "hotoo <hotoo.cn@gmail.com>",
+  "homepage": "https://github.com/hotoo/round-percent",
+  "author": "闲耘 <hotoo.cn@gmail.com>",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/hotoo/round-percent"
   },
   "bugs": {
-    "url": ""
+    "url": "https://github.com/hotoo/round-percent/issues"
   },
   "licenses": "MIT",
   "spm": {
