@@ -65,12 +65,12 @@ RoundPercent.prototype.render = function(){
     } else if (deg > 180){
       element.addClass("highlight180");
       before.css({
-        'transform': 'rotate(' + (deg + offsetDeg) + 'deg)'
+        'transform': 'rotate(' + (deg - offsetDeg) + 'deg)'
       });
     } else if (deg > 90){
       element.addClass("highlight90");
       before.css({
-        'transform': 'rotate(' + (deg + offsetDeg) + 'deg)'
+        'transform': 'rotate(' + (deg - offsetDeg) + 'deg)'
       });
     } else {
       before.css({

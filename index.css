@@ -41,17 +41,21 @@
   z-index: 2;
 }
 .round-percent > .before {
-  border-top: 5px solid #eee;
+  border-top: 6px solid #eee;
   z-index: 3;
 }
 
-.round-percent.highlight90 > .after {
-  border-right: 5px solid #999;
+.round-percent.highlight90 > .before {
+  border-top-color: #999;
 }
+
 .round-percent.highlight180 > .after {
   border-right: 5px solid #999;
-  border-bottom: 5px solid #999;
 }
+.round-percent.highlight180 > .before {
+  border-top-color: #999;
+}
+
 .round-percent.highlight270 > .after {
   border-right: 5px solid #999;
   border-bottom: 5px solid #999;
