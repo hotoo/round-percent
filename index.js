@@ -55,8 +55,9 @@ RoundPercent.prototype.render = function(){
 
   setTimeout(function(){
     if (deg > 360) {
-      return;
-    } else if (deg > 270){
+      deg = 360;
+    }
+    if (deg > 270){
       element.addClass("highlight270");
       before.css({
         'transform': 'rotate(' + (deg - offsetDeg) + 'deg)'
