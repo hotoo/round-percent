@@ -54,6 +54,15 @@ ul.columns:after{
   <li>
     <div id="percent75">0%</div>
   </li>
+  <li>
+    <div id="percent80">0%</div>
+  </li>
+  <li>
+    <div id="percent90">0%</div>
+  </li>
+  <li>
+    <div id="percent100">0%</div>
+  </li>
 </ul>
 ````
 
@@ -71,6 +80,9 @@ seajs.use(['index', 'index.css'], function(RoundPercent) {
   new RoundPercent("#percent60", "60%", 100).render();
   new RoundPercent("#percent70", "70%", 100).render();
   new RoundPercent("#percent75", "75%", 100).render();
+  new RoundPercent("#percent80", "80%", 100).render();
+  new RoundPercent("#percent90", "90%", 100).render();
+  new RoundPercent("#percent100", "100%", 100).render();
 
 });
 ````

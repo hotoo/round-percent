@@ -1,16 +1,12 @@
 
 var $ = require("jquery");
 
-var offsetDeg = 45; // start from top(90deg)
+var offsetDeg = 45; // start from top(12 o'clock)
 
 // @param {String} percent like `5%`
 // @return {Number} like `0.05`
 function parsePercent(percent){
   return parseFloat(percent) / 100;
-}
-
-function formatPercent(percent){
-  return parseInt(percent * 100, 10) + "%";
 }
 
 function calcDeg(percent){
@@ -32,10 +28,6 @@ function RoundPercent(element, percent, width, height) {
 RoundPercent.prototype.render = function(){
   var element = this._element;
 
-  if (!this._style) {
-    this._style = $('<style></style>').appendTo("head")
-  }
-
   element.addClass("round-percent")
     .width(this._width)
     .height(this._height)
@@ -44,41 +36,42 @@ RoundPercent.prototype.render = function(){
   var deg = calcDeg(parsePercent(this._percent));
   var css;
 
-  if (deg > 360) {
-    return;
-  } else if (deg >= 270){
-    css = [
-      this._element_id + '.round-percent:after{',
-        'border-right:5px solid #999;',
-        'border-bottom:5px solid #999;',
-      '}'];
-  } else if (deg >= 180){
-    css = [
-      this._element_id + '.round-percent:after{',
-        'border-right:5px solid #999;',
-        'border-bottom:5px solid #999;',
-      '}',
-      this._element_id + '.round-percent:before{',
-        'transform:rotate(' + (deg + offsetDeg) + 'deg);',
-      '}'
-      ];
-  } else if (deg >= 90){
-    css = [
-      this._element_id + '.round-percent:after{',
-        'border-right:5px solid #999;',
-      '}',
-      this._element_id + '.round-percent:before{',
-        'transform:rotate(' + (deg + offsetDeg) + 'deg);',
-      '}'
-      ];
-  } else {
-    css = [
-      this._element_id + '.round-percent:before{',
-        'transform:rotate(' + (deg + offsetDeg) + 'deg);',
-      '}'
-    ]
-  }
-  this._style.text( css.join("") );
+  var after = $('<div class="after">').appendTo(element);
+  var before = $('<div class="before">').appendTo(element);
+
+  setTimeout(function(){
+    if (deg > 360) {
+      return;
+    } else if (deg >= 270){
+      after.css({
+        'border-right': '5px solid #999',
+        'border-bottom': '5px solid #999'
+      });
+      before.css({
+        'border-top': '5px solid #999',
+        'transform': 'rotate(' + (deg - offsetDeg) + 'deg)'
+      });
+    } else if (deg >= 180){
+      after.css({
+        'border-right': '5px solid #999',
+        'border-bottom': '5px solid #999'
+      });
+      before.css({
+        'transform': 'rotate(' + (deg + offsetDeg) + 'deg)'
+      });
+    } else if (deg >= 90){
+      after.css({
+        'border-right': '5px solid #999'
+      });
+      before.css({
+        'transform': 'rotate(' + (deg + offsetDeg) + 'deg)'
+      });
+    } else {
+      before.css({
+        "transform": "rotate(" + (deg + offsetDeg) + "deg)"
+      });
+    }
+  }, 0);
 };
 
 module.exports = RoundPercent;
