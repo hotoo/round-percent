@@ -21,52 +21,41 @@
   left: 50%;
   margin: -55px 0 0 -55px;
   border-radius: 100%;
-  content: "";
-}
-
-.round-percent > .after {
   border: 5px solid transparent;
-  border-top-color: #999;
-
-  -webkit-transition: all .75s ease 0s;
-  transition: all .75s ease 0s;
-  -webkit-animation: standard .75s infinite linear;
-  animation: standard .75s infinite linear;
-  -webkit-transform-origin: center;
-  -ms-transform-origin: center;
-  transform-origin: center;
+  content: "";
 
   transform:rotate(45deg);
   -ms-transform:rotate(45deg); 	/* IE 9 */
   -moz-transform:rotate(45deg); 	/* Firefox */
   -webkit-transform:rotate(45deg); /* Safari 和 Chrome */
   -o-transform:rotate(45deg); 	/* Opera */
-
-  z-index: 2;
-}
-.round-percent > .before {
-  border: 5px solid transparent;
-  border-top: 5px solid #eee;
-
-
-  -webkit-transition: all .75s ease 0s;
-  transition: all .75s ease 0s;
-  -webkit-animation: standard .75s infinite linear;
-  animation: standard .75s infinite linear;
-  -webkit-transform-origin: center;
-  -ms-transform-origin: center;
-  transform-origin: center;
 
   transition: all 0.5s ease-in-out;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
+}
 
-  transform:rotate(45deg);
-  -ms-transform:rotate(45deg); 	/* IE 9 */
-  -moz-transform:rotate(45deg); 	/* Firefox */
-  -webkit-transform:rotate(45deg); /* Safari 和 Chrome */
-  -o-transform:rotate(45deg); 	/* Opera */
-
+.round-percent > .after {
+  border-top-color: #999;
+  z-index: 2;
+}
+.round-percent > .before {
+  border-top: 5px solid #eee;
   z-index: 3;
+}
+
+.round-percent.highlight90 > .after {
+  border-right: 5px solid #999;
+}
+.round-percent.highlight180 > .after {
+  border-right: 5px solid #999;
+  border-bottom: 5px solid #999;
+}
+.round-percent.highlight270 > .after {
+  border-right: 5px solid #999;
+  border-bottom: 5px solid #999;
+}
+.round-percent.highlight270 > .before {
+  border-top: 5px solid #999;
 }

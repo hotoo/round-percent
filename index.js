@@ -57,26 +57,17 @@ RoundPercent.prototype.render = function(){
     if (deg > 360) {
       return;
     } else if (deg > 270){
-      after.css({
-        'border-right': '5px solid #999',
-        'border-bottom': '5px solid #999'
-      });
+      element.addClass("highlight270");
       before.css({
-        'border-top': '5px solid #999',
         'transform': 'rotate(' + (deg - offsetDeg) + 'deg)'
       });
     } else if (deg > 180){
-      after.css({
-        'border-right': '5px solid #999',
-        'border-bottom': '5px solid #999'
-      });
+      element.addClass("highlight180");
       before.css({
         'transform': 'rotate(' + (deg + offsetDeg) + 'deg)'
       });
     } else if (deg > 90){
-      after.css({
-        'border-right': '5px solid #999'
-      });
+      element.addClass("highlight90");
       before.css({
         'transform': 'rotate(' + (deg + offsetDeg) + 'deg)'
       });
