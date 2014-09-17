@@ -13,6 +13,10 @@ function calcDeg(percent){
   return 360 * percent;
 }
 
+function calcFontSize(height){
+  return parseInt(height / 3.33, 10);
+}
+
 // @param {HTMLElement,jQuery} element
 // @param {String} percent like `5%`
 // @param {Number} width
@@ -29,20 +33,30 @@ RoundPercent.prototype.render = function(){
   var element = this._element;
 
   element.addClass("round-percent")
+    .css({
+      'line-height': this._height + 'px',
+      'font-size': calcFontSize(this._height) + 'px'
+    })
     .width(this._width)
     .height(this._height)
     .html(this._percent);
 
   var deg = calcDeg(parsePercent(this._percent));
-  var css;
+  var css = {
+    'margin-top': "-" + (this._height / 2 + 5) + "px",
+    'margin-left': "-" + (this._width / 2 + 5) + "px"
+  };
 
   var after = $('<div class="after">').appendTo(element);
   var before = $('<div class="before">').appendTo(element);
 
+  after.css(css)
+  before.css(css)
+
   setTimeout(function(){
     if (deg > 360) {
       return;
-    } else if (deg >= 270){
+    } else if (deg > 270){
       after.css({
         'border-right': '5px solid #999',
         'border-bottom': '5px solid #999'
@@ -51,7 +65,7 @@ RoundPercent.prototype.render = function(){
         'border-top': '5px solid #999',
         'transform': 'rotate(' + (deg - offsetDeg) + 'deg)'
       });
-    } else if (deg >= 180){
+    } else if (deg > 180){
       after.css({
         'border-right': '5px solid #999',
         'border-bottom': '5px solid #999'
@@ -59,7 +73,7 @@ RoundPercent.prototype.render = function(){
       before.css({
         'transform': 'rotate(' + (deg + offsetDeg) + 'deg)'
       });
-    } else if (deg >= 90){
+    } else if (deg > 90){
       after.css({
         'border-right': '5px solid #999'
       });

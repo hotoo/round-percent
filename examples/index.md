@@ -28,19 +28,10 @@ ul.columns:after{
     <div id="percent10">0%</div>
   </li>
   <li>
-    <div id="percent20">0%</div>
-  </li>
-  <li>
     <div id="percent25">0%</div>
   </li>
   <li>
-    <div id="percent30">0%</div>
-  </li>
-  <li>
     <div id="percent40">0%</div>
-  </li>
-  <li>
-    <div id="percent45">0%</div>
   </li>
   <li>
     <div id="percent50">0%</div>
@@ -49,13 +40,7 @@ ul.columns:after{
     <div id="percent60">0%</div>
   </li>
   <li>
-    <div id="percent70">0%</div>
-  </li>
-  <li>
     <div id="percent75">0%</div>
-  </li>
-  <li>
-    <div id="percent80">0%</div>
   </li>
   <li>
     <div id="percent90">0%</div>
@@ -69,20 +54,15 @@ ul.columns:after{
 ````javascript
 seajs.use(['index', 'index.css'], function(RoundPercent) {
 
-  new RoundPercent("#percent0", "0%", 100).render();
-  new RoundPercent("#percent10", "10%", 100).render();
-  new RoundPercent("#percent20", "20%", 100).render();
-  new RoundPercent("#percent25", "25%", 100).render();
-  new RoundPercent("#percent30", "30%", 100).render();
-  new RoundPercent("#percent40", "40%", 100).render();
-  new RoundPercent("#percent45", "45%", 100).render();
-  new RoundPercent("#percent50", "50%", 100).render();
+  new RoundPercent("#percent0", "0%", 50).render();
+  new RoundPercent("#percent10", "10%", 60).render();
+  new RoundPercent("#percent25", "25%", 75).render();
+  new RoundPercent("#percent40", "40%", 80).render();
+  new RoundPercent("#percent50", "50%", 90).render();
   new RoundPercent("#percent60", "60%", 100).render();
-  new RoundPercent("#percent70", "70%", 100).render();
-  new RoundPercent("#percent75", "75%", 100).render();
-  new RoundPercent("#percent80", "80%", 100).render();
-  new RoundPercent("#percent90", "90%", 100).render();
-  new RoundPercent("#percent100", "100%", 100).render();
+  new RoundPercent("#percent75", "75%", 150).render();
+  new RoundPercent("#percent90", "90%", 175).render();
+  new RoundPercent("#percent100", "100%", 200).render();
 
 });
 ````
