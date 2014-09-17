@@ -12,8 +12,8 @@
   color: #999;
 }
 
-.round-percent > .before,
-.round-percent > .after {
+.round-percent > .round-percent-before,
+.round-percent > .round-percent-after {
   position: absolute;
   width: 100%;
   height:100%;
@@ -36,30 +36,30 @@
   -o-transition: all 0.5s ease-in-out;
 }
 
-.round-percent > .after {
+.round-percent > .round-percent-after {
   border-top-color: #999;
   z-index: 2;
 }
-.round-percent > .before {
+.round-percent > .round-percent-before {
   border-top: 6px solid #eee;
   z-index: 3;
 }
 
-.round-percent.highlight90 > .before {
+.round-percent.round-percent-highlight90 > .round-percent-before {
   border-top-color: #999;
 }
 
-.round-percent.highlight180 > .after {
+.round-percent.round-percent-highlight180 > .round-percent-after {
   border-right: 5px solid #999;
 }
-.round-percent.highlight180 > .before {
+.round-percent.round-percent-highlight180 > .round-percent-before {
   border-top-color: #999;
 }
 
-.round-percent.highlight270 > .after {
+.round-percent.round-percent-highlight270 > .round-percent-after {
   border-right: 5px solid #999;
   border-bottom: 5px solid #999;
 }
-.round-percent.highlight270 > .before {
+.round-percent.round-percent-highlight270 > .round-percent-before {
   border-top: 5px solid #999;
 }

@@ -47,8 +47,8 @@ RoundPercent.prototype.render = function(){
     'margin-left': "-" + (this._width / 2 + 5) + "px"
   };
 
-  var after = $('<div class="after">').appendTo(element);
-  var before = $('<div class="before">').appendTo(element);
+  var after = $('<div class="round-percent-after">').appendTo(element);
+  var before = $('<div class="round-percent-before">').appendTo(element);
 
   after.css(css)
   before.css(css)
@@ -58,17 +58,17 @@ RoundPercent.prototype.render = function(){
       deg = 360;
     }
     if (deg > 270){
-      element.addClass("highlight270");
+      element.addClass("round-percent-highlight270");
       before.css({
         'transform': 'rotate(' + (deg - offsetDeg) + 'deg)'
       });
     } else if (deg > 180){
-      element.addClass("highlight180");
+      element.addClass("round-percent-highlight180");
       before.css({
         'transform': 'rotate(' + (deg - offsetDeg) + 'deg)'
       });
     } else if (deg > 90){
-      element.addClass("highlight90");
+      element.addClass("round-percent-highlight90");
       before.css({
         'transform': 'rotate(' + (deg - offsetDeg) + 'deg)'
       });
