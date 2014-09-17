@@ -22,7 +22,6 @@ function calcFontSize(height){
 // @param {Number} width
 // @param {Number} height
 function RoundPercent(element, percent, width, height) {
-  this._element_id = element;
   this._element = $(element);
   this._percent = percent;
   this._width = width;
