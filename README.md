@@ -16,3 +16,21 @@ $ spm install round-percent --save
 var roundPercent = require('round-percent');
 // use roundPercent
 ```
+
+## API
+
+### RoundPercent(Object element, String percent, Number width, [Number height])
+
+参数：
+
+* `Object element`：目标 DOM 渲染位置。可以是以下类型：
+  * HTMLElement：例如 `document.getElementById("id")`
+  * jQuery：例如 `$("$id")`
+  * `Selector`：例如 `"#id"`
+* `String percent`：百分比值。例如 `"50%"`
+* `Number width`：渲染的尺寸宽度。例如 `100`
+* `Number height`：渲染的尺寸高度，可选。例如 `100`
+
+### .render()
+
+执行渲染。
