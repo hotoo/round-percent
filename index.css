@@ -48,6 +48,7 @@
   border: 5px solid transparent;
   border-top: 5px solid #eee;
 
+
   -webkit-transition: all .75s ease 0s;
   transition: all .75s ease 0s;
   -webkit-animation: standard .75s infinite linear;
@@ -56,16 +57,27 @@
   -ms-transform-origin: center;
   transform-origin: center;
 
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+
   transform:rotate(55deg);
   -ms-transform:rotate(55deg); 	/* IE 9 */
   -moz-transform:rotate(55deg); 	/* Firefox */
   -webkit-transform:rotate(55deg); /* Safari 和 Chrome */
   -o-transform:rotate(55deg); 	/* Opera */
 
-  transition: all 0.5s ease-in-out;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
-
   z-index: 3;
+}
+
+.round-percent-animation:before {
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: .2s;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-duration: 1s;
+  -moz-animation-delay: .2s;
+  -moz-animation-timing-function: ease;
+  -moz-animation-fill-mode: both;
 }

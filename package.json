@@ -2,7 +2,9 @@
   "name": "round-percent",
   "version": "0.1.0",
   "description": "Round Percent Widget",
-  "keywords": ["Percent"],
+  "keywords": [
+    "Percent"
+  ],
   "homepage": "",
   "author": "hotoo <hotoo.cn@gmail.com>",
   "repository": {
@@ -16,6 +18,7 @@
   "spm": {
     "main": "index.js",
     "dependencies": {
+      "jquery": "2.1.1"
     },
     "devDependencies": {
       "expect.js": "0.3.1"
