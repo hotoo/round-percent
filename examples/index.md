@@ -28,7 +28,6 @@ seajs.use(['jquery', 'index', 'index.css'], function($, RoundPercent) {
     }).render();
 
     var elem = $("#wrap")
-    var i = 0;
     for(var i = 0; i <= 100; i+=5) {
       elem.append('<li><div id="loading'+i+'"></div></li>');
 
