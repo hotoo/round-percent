@@ -24,7 +24,6 @@ seajs.use(['jquery', 'index', 'index.css'], function($, RoundPercent) {
       new RoundPercent({
         element: "#loading"+i,
         percent: i+"%",
-        height: 80,
         width: 80,
         border: 2
       }).render();
