@@ -7,18 +7,28 @@
 <style>
 ul#wrap, ul#wrap>li{
   list-style:none;
-  margin: 10px 0;
-  padding: 0
+  margin: 10px;
+  padding: 0;
+  float: left;
 }
 </style>
 
+<div id="big-demo"></div>
 <ul id="wrap"></ul>
 
 ````javascript
 seajs.use(['jquery', 'index', 'index.css'], function($, RoundPercent) {
+
+    new RoundPercent({
+      element: "#big-demo",
+      percent: "80%",
+      width: 160,
+      border: 5
+    }).render();
+
     var elem = $("#wrap")
     var i = 0;
-    for(var i = 0; i < 101; i+=5) {
+    for(var i = 0; i <= 100; i+=5) {
       elem.append('<li><div id="loading'+i+'"></div></li>');
 
       new RoundPercent({

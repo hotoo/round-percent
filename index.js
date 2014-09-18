@@ -22,7 +22,7 @@ function RoundPercent(config) {
   this._width = config.width;
   this._height = config.height || config.width;
   this._border = config.border || 2;
-  this._fill = config.fill == undefined ? true : config.fill;
+  this._fill = config.fill == undefined ? this._percent : config.fill;
 }
 
 RoundPercent.prototype.render = function() {
@@ -30,15 +30,17 @@ RoundPercent.prototype.render = function() {
 
   element.addClass("round-percent")
     .css({
+      'border-width': this._border + 'px',
       'line-height': this._height + 'px',
       'font-size': calcFontSize(this._height) + 'px'
-    });
-  element.width(this._width)
-    .height(this._height);
-  this._fill && element.html(this._percent);
+    })
+    .width(this._width)
+    .height(this._height)
+    .html(this._fill);
 
   var deg = calcDeg(parsePercent(this._percent));
   var css = {
+    'border-width': this._border + 'px',
     'margin-top': "-" + (this._height / 2 + this._border) + "px",
     'margin-left': "-" + (this._width / 2 + this._border) + "px"
   };

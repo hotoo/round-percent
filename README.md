@@ -31,7 +31,7 @@ config 参数各项：
 * `Number width`：渲染的尺寸宽度。例如 `100`
 * `Number height`：渲染的尺寸高度，可选。例如 `100`
 * `Number border`：边框宽度，默认为 2。
-* `Boolean fill`：是否自动填充内容，默认为 true。
+* `String fill`：自定义填充内容，默认为填充百分比。
 
 ### .render()
 
