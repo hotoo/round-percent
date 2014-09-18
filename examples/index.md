@@ -23,7 +23,8 @@ seajs.use(['jquery', 'index', 'index.css'], function($, RoundPercent) {
       element: "#big-demo",
       percent: "80%",
       width: 160,
-      border: 5
+      border: 5,
+      fill: "text"
     }).render();
 
     var elem = $("#wrap")
