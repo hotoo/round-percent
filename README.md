@@ -4,6 +4,8 @@
 
 Round Percent Widget
 
+![screenshot](screenshot.png)
+
 ## Install
 
 ```
