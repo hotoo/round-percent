@@ -4,6 +4,8 @@
 
 Round Percent Widget
 
+![](https://t.alipayobjects.com/images/T1V.NbXh0qXXXXXXXX.png)
+
 ## Install
 
 ```
