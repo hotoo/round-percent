@@ -1,4 +1,4 @@
-var $ = require("jquery");
+var $ = require("zepto");
 
 var offsetDeg = 45; // start from top(12 o'clock)
 
@@ -22,21 +22,28 @@ function RoundPercent(config) {
   this._width = config.width;
   this._height = config.height || config.width;
   this._border = config.border || 2;
-  this._fill = config.fill == undefined ? this._percent : config.fill;
+  this._fill = config.fill;
 }
 
 RoundPercent.prototype.render = function() {
   var element = this._element;
 
   element.addClass("round-percent")
-    .css({
-      'border-width': this._border + 'px',
-      'line-height': this._height + 'px',
-      'font-size': calcFontSize(this._height) + 'px'
-    })
     .width(this._width)
     .height(this._height)
-    .html(this._fill);
+    .css({
+      'border-width': this._border + 'px'
+    });
+
+  if (this._fill !== false){
+    element.html(this._fill || this._percent);
+    if (!this._fill) {
+      element.css({
+        'line-height': this._height + 'px',
+        'font-size': calcFontSize(this._height) + 'px'
+      });
+    }
+  }
 
   var deg = calcDeg(parsePercent(this._percent));
   var css = {

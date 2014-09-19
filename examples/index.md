@@ -16,15 +16,25 @@ ul#wrap, ul#wrap>li{
 <div id="big-demo"></div>
 <ul id="wrap"></ul>
 
+````html
+<style>
+#big-demo {
+  font-size:60px;
+  line-height:160px;
+  color:#f60
+}
+</style>
+````
+
 ````javascript
-seajs.use(['jquery', 'index', 'index.css'], function($, RoundPercent) {
+seajs.use(['zepto', 'index', 'index.css'], function($, RoundPercent) {
 
     new RoundPercent({
       element: "#big-demo",
       percent: "80%",
       width: 160,
       border: 5,
-      fill: "text"
+      fill: 'text'
     }).render();
 
     var elem = $("#wrap")
