@@ -16,6 +16,13 @@ function calcFontSize(height) {
   return parseInt(height / 3.33, 10);
 }
 
+function transform(element, deg){
+  element.css({
+    'transform': 'rotate(' + deg  + 'deg)',
+    '-webkit-transform': 'rotate(' + deg + 'deg)'
+  });
+}
+
 function RoundPercent(config) {
   this._element = $(config.element);
   this._percent = config.percent;
@@ -64,23 +71,15 @@ RoundPercent.prototype.render = function() {
     }
     if (deg > 270) {
       element.addClass("round-percent-highlight270");
-      before.css({
-        'transform': 'rotate(' + (deg - offsetDeg) + 'deg)'
-      });
+      transform(before, deg - offsetDeg);
     } else if (deg > 180) {
       element.addClass("round-percent-highlight180");
-      before.css({
-        'transform': 'rotate(' + (deg - offsetDeg) + 'deg)'
-      });
+      transform(before, deg - offsetDeg);
     } else if (deg > 90) {
       element.addClass("round-percent-highlight90");
-      before.css({
-        'transform': 'rotate(' + (deg - offsetDeg) + 'deg)'
-      });
+      transform(before, deg - offsetDeg);
     } else {
-      before.css({
-        "transform": "rotate(" + (deg + offsetDeg) + "deg)"
-      });
+      transform(before, deg + offsetDeg);
     }
   }, 0);
 };
